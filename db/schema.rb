@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2020_01_02_200828) do
     t.string "name"
     t.date "lastmeet"
     t.integer "frequency"
-    t.boolean "warning"
+    t.boolean "warning", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
