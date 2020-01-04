@@ -1,0 +1,7 @@
+<% @contacts.each do |contact| %>
+<h2><%= contact.name %></h2>
+<% if contact.warning = true %>
+<h3> Time to Meet Up!! </h3>
+<% end %>
+<p><%= contact.lastmeet %></p>
+<p><%= contact.frequency %></p>
