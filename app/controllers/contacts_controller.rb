@@ -13,7 +13,11 @@ class ContactsController < ApplicationController
 
   def create
     @contact = Contact.new(contact_params)
-    @contact.save
+    if @contact.save
+      redirect_to @contact
+    else
+      render :new
+    end
   end
 
   def edit
@@ -23,7 +27,11 @@ class ContactsController < ApplicationController
   def update
     @contact = Contact.find(params[:id])
     @contact.update(contact_params)
-    @contact.save
+    if @contact.save
+      redirect_to @contact
+    else
+      render :edit
+    end
   end
 
   def destroy
