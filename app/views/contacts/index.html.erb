@@ -1,6 +1,7 @@
 <% @contacts.each do |contact| %>
 <h2><%= contact.name %></h2>
-<% if contact.warning == true %>
+<% date = (contact.lastmeet + (contact.frequency * 7)) %>
+<% if date.past? %>
 <h3> Time to Meet Up!! </h3>
 <% end %>
 <p> Last Meetup: <%= contact.lastmeet %></p>
