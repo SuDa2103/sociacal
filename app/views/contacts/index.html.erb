@@ -6,6 +6,7 @@
 <% end %>
 <p> Last Meetup: <%= contact.lastmeet %></p>
 <p> Frequency of Meetups: <%= contact.frequency %> Weeks</p>
+<%= link_to "Delete", edit_contact_path(contact)  %>
 <% end %>
 
 
