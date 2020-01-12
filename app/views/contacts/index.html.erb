@@ -7,6 +7,9 @@
   <% end %>
   <p> Last Meetup: <%= contact.lastmeet %></p>
   <p> Frequency of Meetups: <%= contact.frequency %> Weeks</p>
+  <% if contact.photo.attached? %>
+  <%= cl_image_tag contact.photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
   <%= link_to "Edit", edit_contact_path(contact)  %>
   <%= link_to "Delete", contact_path(contact), :method => :delete  %>
   <% end %>
