@@ -1,14 +1,16 @@
-<% @contacts.each do |contact| %>
-<h2><%= contact.name %></h2>
-<% date = (contact.lastmeet + (contact.frequency * 7)) %>
-<% if date.past? %>
-<h3> Time to Meet Up!! </h3>
-<% end %>
-<p> Last Meetup: <%= contact.lastmeet %></p>
-<p> Frequency of Meetups: <%= contact.frequency %> Weeks</p>
-<%= link_to "Edit", edit_contact_path(contact)  %>
-<%= link_to "Delete", contact_path(contact), :method => :delete  %>
-<% end %>
-
+<div>
+  <% @contacts.each do |contact| %>
+  <h2><%= contact.name %></h2>
+  <% date = (contact.lastmeet + (contact.frequency * 7)) %>
+  <% if date.past? %>
+  <h3> Time to Meet Up!! </h3>
+  <% end %>
+  <p> Last Meetup: <%= contact.lastmeet %></p>
+  <p> Frequency of Meetups: <%= contact.frequency %> Weeks</p>
+  <%= link_to "Edit", edit_contact_path(contact)  %>
+  <%= link_to "Delete", contact_path(contact), :method => :delete  %>
+  <% end %>
+</div>
+<br>
 
 <%= link_to "Add a New Contact", new_contact_path  %>
